@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>music player</title>
+		<style type="text/css">
+			ul{
+				border: 1px solid slateblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="musicapp">
+			<input type="text" v-model="query" @keyup.enter="searchSongsList"/>
+			<div style="width: 100px; height: 100px; border-radius: 50%; border: 1px solid salmon; margin:50px ;background-image: url(img/portrait3.jpeg);">
+				
+			</div>
+			<div>{{ songInfo.songs[0].id }}</div>
+			
+			<div id="songList" v-show="this.songs.length != 0">
+				<ul>
+					<li v-for="item in songInfo.songs"> <span>||</span> {{ item.name }} {{ item.mvid }} {{ item.artists[0].img1v1Url }}</li>
+				</ul>
+			</div>
+			<div id="">
+				<a href="">></a>
+			</div>
+			<button @click="getMusic(1413377028)">click me</button>
+			
+			
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="js/main_music.js"></script>
+
+	</body>
+</html>

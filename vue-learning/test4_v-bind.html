@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-bind test</title>
+		<style type="text/css">
+			.hi{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<img :src="imgSrc" :title="imgTitle" height="120px">
+			<div v-bind:class="{hi:isActive}">hhh</div>
+			<button type="button" @click="lastone" v-show="index !=0">last</button>
+			<button @click="toggleActive">toggleActives status</button>
+			<button type="button" @click="nextone" v-show="index<portrait.length-1">next</button>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:"#app",
+				data:{
+					imgSrc:'img/portait1.jpeg',
+					imgTitle:'portrait',
+					isActive:false,
+					portrait:[
+						"img/portrait6.jpeg",
+						"img/portrait7.jpeg",
+						"img/portrait9.png",
+						"img/portrait11.jpg",
+						"img/portrait4.jpeg",
+						"img/portrait5.jpg",
+						"img/portrait8.jpeg",
+						"img/portrait3.jpeg",
+						"img/portrait10.jpg",
+						"img/portrait2.jpeg",
+						"img/portait1.jpeg",
+					],
+					index:'0',
+					onoroff1:true,
+					onoroff2:true
+					
+				},
+				methods:{
+					toggleActive:function(){
+						this.isActive=!this.isActive
+					},
+					nextone:function(){
+						this.index++
+						if(this.index<this.portrait.length-1){
+							this.imgSrc=this.portrait[this.index];
+							
+						}else{
+							alert('no more pictures!');
+							
+							
+						}
+		
+					},
+					lastone:function(){
+						this.index--;
+						if(this.index<0){
+							alert('no more pictures!');
+							
+							
+						}else{
+							this.imgSrc=this.portrait[this.index];
+						}	
+					}					
+				}
+			
+			})
+		</script>
+	</body>
+</html>

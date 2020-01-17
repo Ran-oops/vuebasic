@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>note practice</title>
+	</head>
+	<body>
+		<div id='note'>
+			<center><h3>note</h3></center>
+			<div class="mui-input-row">			
+				<input type="text" placeholder="input your plan" v-model="addnote" @keyup.enter="add">
+			</div>
+			
+			<div>
+				<ul>
+					<li v-for="(tip,index) in tips">{{ index+1 }}  {{ tip }} <span @click="deletes">x</span></li>
+				</ul>
+			</div>
+			<div v-show="this.tips.length != 0">
+				<span v-text="this.tips.length"></span><span>&nbsp;items left</span>
+				<button type="text" @click="clear">clear all</button>
+			</div>
+
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var note = new Vue({
+				el:'#note',
+				data:{
+					tips:[
+						'read book',
+						'soccer',
+						'running'
+					],
+					addnote:'dapai'
+				},
+				methods:{
+					add:function(){
+						this.tips.push(this.addnote)
+					},
+					clear:function(){
+						this.tips=[]
+					},
+					deletes:function(){
+						this.tips.splice(this.index,1)
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>first-test</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			window.onload=function(){
+				var v =new Vue({
+					el:'#app',
+					data:{
+						mess:'hello vue!',
+						dict1:{
+							username: 'Mark',
+							phonenum:'13149237458'
+						},
+						array1:['ab','av','p2p']
+					}
+				})
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="app">
+		{{ mess }}
+		<div>{{ dict1.username }}</div>
+		<div>
+			{{ array1[0] }}
+
+		</div>
+		</div>
+
+
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app" v-html='say+"111"'>
+			
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:'#app',
+				data:{
+					say:'<a href="www.ba">how are you!</a>'
+				},
+				methods:{
+					say:function(){
+						return hello
+					}
+				}
+				
+			})
+		</script>
+	</body>
+</html>

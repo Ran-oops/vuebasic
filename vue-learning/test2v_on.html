@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-on test</title>
+	</head>
+	<body>
+		<div  id="app" @click="clk">
+			click me!
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:'#app',
+				data:{},
+				methods:{
+					clk:function(){
+						alert('yeah, you click me!')
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

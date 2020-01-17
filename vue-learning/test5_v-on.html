@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-for & push pop unshift shift</title>
+	</head>
+	<body>
+		
+		<div id="app">
+			<button @click="add">加人</button>
+			<button @click="sub">减人</button>
+			
+			<ul>
+				<li v-for="(m,n) in num">{{ n }} {{m}}</li>
+				<li v-for="one in arr1">{{ one.name }}  {{ one.age }}</li>
+				
+			</ul>
+
+			
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el:'#app',
+				data:{
+					num:[1,5,3],
+					arr1:[
+						{name:'xiaoxiao', age:18},
+						{name:'susu', age: 20}
+					]			
+				},
+				methods:{
+					add:function(){
+						this.arr1.push({name:'xiaohua',age:22})
+					},
+					
+					sub:function(){
+						this.arr1.pop()
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>
